@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+{% block title %}
+    Kendi Numaralarınla Oyna
+{% endblock %}
+{% block head %}
+{% endblock %}
+{% block body %}
+{% load crispy_forms_tags %}
+    <div class="container mt-1 mb-5">
+        <div class="row">
+            <div class="col-md-6 bg-warning">
+                <h2>Şu an kendi seçtiğiniz numaralar ile oynuyorsunuz</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row justify-content-center">
+                       <div class="col-6 mx-auto text-center">
+                           <input type="radio" name="choice" value="evet">
+                           <span>ONAYLIYORUM</span>
+                           <input type="radio" name="choice" value="hayır" checked>
+                           <span>X</span>
+                       </div>
+                    </div>
+                    <div class="row row1 my-5">
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber1" value="1">
+                            <span>1</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber2" value="2">
+                            <span>2</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber3" value="3">
+                            <span>3</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber4" value="4">
+                            <span>4</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber5" value="5">
+                            <span>5</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber6" value="6">
+                            <span>6</span>
+                        </div>
+                    </div>
+                    <div class="row row2 my-5">
+                        <div class="col-2 mx-auto text-center">
+                           <input type="checkbox" name="guestnumber7" value="7">
+                            <span>7</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber8" value="8">
+                            <span>8</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber9" value="9">
+                            <span>9</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber10" value="10">
+                            <span>10</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber11" value="11">
+                            <span>11</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber12" value="12">
+                            <span>12</span>
+                        </div>
+                    </div>
+                    <div class="row row3 my-5">
+                        <div class="col-2 mx-auto text-center">
+                           <input type="checkbox" name="guestnumber13" value="13">
+                            <span>13</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber14" value="14">
+                            <span>14</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber15" value="15">
+                            <span>15</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber16" value="16">
+                            <span>16</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber17" value="17">
+                            <span>17</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber18" value="18">
+                            <span>18</span>
+                        </div>
+                    </div>
+                    <div class="row row4 my-5">
+                        <div class="col-2 mx-auto text-center">
+                           <input type="checkbox" name="guestnumber19" value="19">
+                            <span>19</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber20" value="20">
+                            <span>20</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber21" value="21">
+                            <span>21</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber22" value="22">
+                            <span>22</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber23" value="23">
+                            <span>23</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber24" value="24">
+                            <span>24</span>
+                        </div>
+                    </div>
+                    <div class="row row5 my-5">
+                        <div class="col-2 mx-auto text-center">
+                           <input type="checkbox" name="guestnumber25" value="25">
+                            <span>25</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber26" value="26">
+                            <span>26</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber27" value="27">
+                            <span>27</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber28" value="28">
+                            <span>28</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber29" value="29">
+                            <span>29</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber30" value="30">
+                            <span>30</span>
+                        </div>
+                    </div>
+                    <div class="row row6 my-5">
+                        <div class="col-2 mx-auto text-center ">
+                           <input type="checkbox" name="guestnumber31" value="31">
+                            <span>31</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber32" value="32">
+                            <span>32</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber33" value="33">
+                            <span>33</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber34" value="34">
+                            <span>34</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber35" value="35">
+                            <span>35</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber36" value="36">
+                            <span>36</span>
+                        </div>
+                    </div>
+                    <div class="row row7 my-5">
+                        <div class="col-2 mx-auto text-center ">
+                           <input type="checkbox" name="guestnumber37" value="37">
+                            <span>37</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber38" value="38">
+                            <span>38</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber39" value="39">
+                            <span>39</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber40" value="40">
+                            <span>40</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber41" value="41">
+                            <span>41</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber42" value="42">
+                            <span>42</span>
+                        </div>
+                    </div>
+                    <div class="row row8 my-5">
+                        <div class="col-2 mx-auto text-center">
+                           <input type="checkbox" name="guestnumber43" value="43">
+                            <span>43</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber44" value="44">
+                            <span>44</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center ">
+                            <input type="checkbox" name="guestnumber45" value="45">
+                            <span>45</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber46" value="46">
+                            <span>46</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber47" value="47">
+                            <span>47</span>
+                        </div>
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber48" value="48">
+                            <span>48</span>
+                        </div>
+                    </div>
+                    <div class="row row9 my-5">
+                        <div class="col-2 mx-auto text-center">
+                            <input type="checkbox" name="guestnumber49" value="49">
+                            <span>49</span>
+                        </div>
+                        <div class="col-10 mx-auto text-center">
+                            <button type="submit" class="btn-block btn btn-success" value="Gönder">Gönder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div style="background: url('/media/chat-fill.svg') no-repeat center center;background-size:contain;" class="container h-100">
+                   <div class="row align-items-center h-100">
+                       <div class="col-12 mx-auto text-center">
+                           <p style="color:white;">Kupon içerisinde toplamda <mark>6 adet numara</mark> seçmelisiniz.</p>
+                           <p style="color:white;">Kuponu göndermek için Gönder butonuna basmadan önce <mark>Onaylıyorum</mark>  butonunu işaretlemeniz gerekmektedir. </p>
+                           <p style="color:white;">Tüm kuponlarınızı <a href="{% url 'number:mynumbers' %}">kuponlarım</a> sayfasından takip edebilirsiniz.</p>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

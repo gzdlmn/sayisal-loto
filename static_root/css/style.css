@@ -1,0 +1,13 @@
+.row1 input, .row2 input, .row3 input, .row4 input, .row5 input, .row6 input, .row7 input, .row8 input, .row9 input{
+    transform: scale(4);
+}
+
+.row1 div, .row2 div, .row3 div, .row4 div, .row5 div, .row6 div, .row7 div, .row8 div, .row9 div{
+    position:relative;
+}
+
+.row1 span, .row2 span, .row3 span, .row4 span, .row5 span, .row6 span, .row7 span, .row8 span, .row9 span{
+    position:absolute;
+    top:40%;
+    left:40%;
+}

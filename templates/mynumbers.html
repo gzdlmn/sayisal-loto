@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}
+    Kuponlarım
+{% endblock %}
+{% block body %}
+{% load crispy_forms_tags %}
+    <div class="container mt-3">
+        <p class="text-center text-success"><strong>{{today}}</strong></p>
+        <div style="text-align:center;" class="row">
+            <div class="col-sm-6 bg-light">
+                <h1>Otomatik Oynadıklarım</h1>
+                <hr/>
+                {% if mynumbers %}
+                    {% for number in mynumbers %}
+                        <span style="font-size:10px;">{{number.created_date}}tarihli</span><span style="border:1px solid black;margin:10px;background-color:yellow;" class="text-danger"><strong>{{number.numbers}}</strong></span>
+                        <i style="font-size:50px;color:green;" class="bi-check"></i>
+                        <br><hr/>
+                    {% endfor %}
+                {% else %}
+                    <p>Kuponunuz bulunmamaktadır...</p>
+                {% endif %}
+            </div>
+            <div class="col-sm-6 bg-light">
+                <h1>Kendi Oynadıklarım</h1>
+                <hr/>
+                {% if mynumbers_manuel %}
+                    {% for guestnumber in mynumbers_manuel %}
+                        <span style="font-size:10px;">{{guestnumber.created_date}}tarihli</span><span style="border:1px solid black;margin:10px;background-color:yellow;" class="text-danger"><strong>{{guestnumber.number_screen}}</strong></span>
+                        <i style="font-size:50px;color:green;" class="bi-check"></i>
+                        <br><hr/>
+                    {% endfor %}
+                {% else %}
+                    <p>Kuponunuz bulunmamaktadır...</p>
+                {% endif %}
+            </div>
+            <p>Süresi geçen kuponlarınız otomatik olarak silinecektir</p>
+        </div>
+    </div>
+    <div style="background: url('/media/chat-fill.svg') no-repeat center center;background-size:contain;margin-bottom:100px;" class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button type="submit" value="submit" class="btn-block btn btn-success w-25 float-right">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

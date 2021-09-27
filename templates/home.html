@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Anasayfa
+{% endblock %}
+{% block body %}
+{% load crispy_forms_tags %}
+    <div class="container-fluid p-3">
+        <p class="text-center text-success"><strong>{{today}}</strong></p>
+        <div class="row justify-content-center">
+            {% if request.user.is_authenticated %}
+                <h4 class="text-center">Hoşgeldin <span><i style="color:green;font-size:2rem;" class="bi bi-person-check-fill"></i> {{request.user.username}}</span></h4>
+            {% else%}
+                <h4 class="text-center"><i style="font-size:2rem;" class="bi bi-person-dash-fill"></i> Hoşgeldiniz</h4>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-md-6 p-5 bg-warning">
+                <h2 class="text-center">İster kendi seçtiğiniz numaralar ile oynayın, İster şanslı numaraları otomatik seçin</h2>
+            </div>
+            <div class="col-md-6 bg-warning">
+                {% if request.user.is_authenticated %}
+                <p class="text-center">Kuponlarına<a href="{% url 'number:mynumbers' %}"><i style="font-size:2rem;" class="bi bi-hand-index-thumb"></i></a>ulaşabilirsin</p>
+                {% else %}
+                <p class="text-center">Sitemizden kupon doldurmak için <a style="text-decoration:none; font-weight:bold;" href="{% url 'user:register' %}">kayıt olmanız gerekmektedir...</a></p>
+                <p class="text-center">Kaydınız bulunuyorsa <a href="{% url 'user:login' %}">giriş yapın</a></p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-md-6 p-5 bg-warning">
+                <p class="text-center">Otomatik oynamak için <a href="{% url 'number:otomatic' %}"><i style="font-size:2rem;" class="bi bi-hand-index-thumb"></i></a></p>
+                <p class="text-center">Şansına güvendiğiniz numaraları işaretlemek için <a href="{% url 'number:manuel' %}"><i style="font-size:2rem;" class="bi bi-hand-index-thumb"></i></a></p>
+            </div>
+            <div style="background:url('media/sayisalloto2.jpg') no-repeat center center; background-size:contain;" class="col-md-6 bg-warning">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Son Kazanan Kupon Numaraları</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h5 class="text-center text-success">{{today}} tarihli KAZANAN KUPON </h5>
+                <h5 class="text-center text-success"><mark>{{luckycoupon.luckynumbers}}</mark></h5>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 mb-5">
+                <h6>Sayıların sıralaması önemli değildir.</h6>
+                <h6>Kazanan kuponun <a href="#">iletişime geçmesi</a>gerekir</h6>
+            </div>
+        </div>
+    </div>
+{% endblock %}

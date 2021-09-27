@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+    Otomatik Oyna
+{% endblock %}
+{% block body %}
+{% load crispy_forms_tags %}
+    <div class="container mt-1 mb-5">
+        <div class="row">
+            <div class="col-md-6 bg-warning">
+                <h2>Şu an sizin için otomatik seçilen numaralar ile oynuyorsunuz</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button type="submit" class="btn-block btn btn-success">Gönder</button>
+                </form>
+                <form method="GET" action="{% url 'number:otomatic' %}">
+                    <h4>Şanslı numaralarınızı Rastgele diyerek değiştirebilirsiniz</h4>
+                    <button class="btn-block btn btn-info">Rastgele</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div style="background: url('/media/chat-fill.svg') no-repeat center center;background-size:contain;" class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-12 mx-auto text-center">
+                            <p style="color:white;">Kuponunuz sizin yerinize otomatik olarak oluşacaktır.</p>
+                            <p style="color:white;">Numaraları değiştirmek isterseniz <mark> Rastgele</mark> butonu ile değiştirebilirsiniz.</p>
+                            <p style="color:white;">Kuponu göndermeden önce <mark>Evet </mark>seçmelisiniz.</p>
+                            <p style="color:white;">Tüm kuponlarınızı <a href="{% url 'number:mynumbers' %}">kuponlarım</a> sayfasından takip edebilirsiniz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

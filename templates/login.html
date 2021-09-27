@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+    Giriş Yap
+{% endblock %}
+{% block body %}
+{% load crispy_forms_tags %}
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 bg-warning">
+                <h1 class="text-center">Giriş Yap</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button type="submit" class="btn-block btn btn-success">Giriş Yap</button>
+                </form>
+                <h6>Eğer kayıtlı değilsen, <a href="{% url 'user:register' %}">buradan kayıt olabilirsin</a></h6>
+            </div>
+        </div>
+    </div>
+{% endblock %}
