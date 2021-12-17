@@ -1,4 +1,5 @@
 # sayisal-loto website project
+![Ekran Görüntüsü (31)](https://user-images.githubusercontent.com/85527587/146587657-a5de9487-184a-4b4d-a10e-2c87aae88f40.png
  Choose 6 numbers with checkbox or the computer chooses it for you. Lucky numbers are automatically written on the homepage every day
 ### Python Project
 This project has written with Django framework.
